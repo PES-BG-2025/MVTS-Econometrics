@@ -64,13 +64,15 @@ install_if_missing(required_packages)
 
 cat("\n\nVerifying installation...\n\n")
 
-# Check if all packages can be loaded
+# Check if all packages are installed correctly
 failed_packages <- c()
 
 for (pkg in required_packages) {
-  if (!require(pkg, character.only = TRUE, quietly = TRUE)) {
-    failed_packages <- c(failed_packages, pkg)
-  }
+  tryCatch({
+    find.package(pkg)
+  }, error = function(e) {
+    failed_packages <<- c(failed_packages, pkg)
+  })
 }
 
 # Report results
@@ -80,8 +82,10 @@ if (length(failed_packages) == 0) {
 } else {
   cat("WARNING: The following packages failed to install:\n")
   cat(paste(failed_packages, collapse = ", "), "\n")
-  cat("\nTry installing them manually:\n")
-  cat("install.packages(c('", paste(failed_packages, collapse = "', '"), "'))\n", sep = "")
+  cat("\nTry installing them manually with:\n")
+  cat("install.packages(c(\n")
+  cat(paste0("  '", failed_packages, "'", collapse = ",\n"))
+  cat("\n))\n")
 }
 
 # ============================================================================

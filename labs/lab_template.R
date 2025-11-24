@@ -17,13 +17,14 @@
 rm(list = ls())
 
 # Load required packages
-# install.packages("vars")  # Uncomment if not installed
+# If not installed, run setup.R first to install all required packages
 library(vars)
 library(ggplot2)
 library(dplyr)
 
-# Set working directory (adjust to your path)
-# setwd("path/to/MVTS-Econometrics")
+# Recommended: Use relative paths or the 'here' package for portability
+# library(here)
+# data_path <- here("data", "raw", "dataset.csv")
 
 # ============================================================================
 # EXERCISE 1: [Title]

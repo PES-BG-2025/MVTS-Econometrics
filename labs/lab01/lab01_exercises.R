@@ -18,7 +18,7 @@
 rm(list = ls())
 
 # Load required packages
-# install.packages(c("tseries", "xts", "zoo", "ggplot2"))  # Run if needed
+# If not installed, run setup.R first to install all required packages
 library(tseries)
 library(xts)
 library(zoo)
