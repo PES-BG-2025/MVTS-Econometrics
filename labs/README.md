@@ -14,11 +14,9 @@ Each lab folder contains:
 - `lab01/` - Introduction to R for Time Series
 - `lab02/` - VAR Model Estimation and Diagnostics
 - `lab03/` - Impulse Response Analysis
-- `lab04/` - Forecast Error Variance Decomposition
-- `lab05/` - Cointegration Testing
-- `lab06/` - VECM Implementation
-- `lab07/` - Structural VAR Identification
-- `lab08/` - Advanced Applications and Project Work
+- `lab04/` - Cointegration Testing
+- `lab05/` - VECM Implementation
+- `lab06/` - Advanced Applications and Project Work
 
 ## Solutions
 

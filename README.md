@@ -14,21 +14,24 @@ This repository contains all materials for the Multivariate Time Series Economet
 MVTS-Econometrics/
 │
 ├── lectures/          # Lecture slides and materials by week
-│   ├── week01/       # Introduction to Multivariate Time Series
-│   ├── week02/       # Vector Autoregression (VAR) Models
-│   ├── ...
-│   └── week12/       # Advanced Topics and Applications
+│   ├── week01/       # Introduction to Multivariate Time Series and VAR Models
+│   └── week02/       # Advanced Topics and Applications
 │
 ├── labs/             # Laboratory sessions with R scripts
 │   ├── lab01/        # Introduction to R for Time Series
 │   ├── lab02/        # VAR Model Estimation and Diagnostics
-│   ├── ...
-│   └── lab08/        # Advanced Applications
+│   ├── lab03/        # Impulse Response Analysis
+│   ├── lab04/        # Cointegration Testing
+│   ├── lab05/        # VECM Implementation
+│   └── lab06/        # Advanced Applications and Project Work
 │
 ├── data/             # Datasets used in the course
 │   ├── raw/          # Original, unmodified datasets
 │   ├── processed/    # Cleaned datasets ready for analysis
 │   └── examples/     # Sample datasets for demonstrations
+│
+├── project/          # Course project materials
+│                     # Guidelines, templates, and project-specific data
 │
 ├── solutions/        # Solutions to laboratory exercises
 │
@@ -64,18 +67,21 @@ install.packages(c("vars", "urca", "tseries", "forecast",
 
 ## Temas del Curso / Course Topics
 
-1. Introduction to Multivariate Time Series
-2. Vector Autoregression (VAR) Models
-3. Impulse Response Functions
-4. Forecast Error Variance Decomposition
-5. Cointegration and Error Correction Models
-6. Vector Error Correction Models (VECM)
-7. Structural VAR Models
-8. State Space Models
-9. Multivariate GARCH Models
-10. Factor Models and Dynamic Factor Models
-11. Regime Switching Models
-12. Advanced Topics and Applications
+This intensive 2-week course covers:
+
+**Week 1:**
+- Introduction to Multivariate Time Series
+- Vector Autoregression (VAR) Models
+- Impulse Response Functions
+- Forecast Error Variance Decomposition
+
+**Week 2:**
+- Cointegration and Error Correction Models
+- Vector Error Correction Models (VECM)
+- Advanced Topics and Applications
+- Course Project
+
+**Laboratory Sessions:** 6 practical sessions with hands-on R implementation
 
 ## Contribuciones / Contributions
 

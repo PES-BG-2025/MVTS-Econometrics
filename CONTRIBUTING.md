@@ -80,6 +80,30 @@ When adding materials to the `references/` folder:
    - Add a brief description in the main `references/README.md`
    - Include citation information
 
+## Adding Project Materials
+
+When adding materials to the `project/` folder:
+
+1. **Guidelines:**
+   - Project instructions and requirements
+   - Deliverable specifications
+   - Submission deadlines and format
+
+2. **Templates:**
+   - R Markdown templates for project reports
+   - R script templates with standard structure
+   - Example projects (anonymized if needed)
+
+3. **Data:**
+   - Project-specific datasets
+   - Data dictionaries for project data
+   - Links to external data sources
+
+4. **Rubrics:**
+   - Grading criteria and evaluation rubrics
+   - Assessment guidelines
+   - Examples of excellent work
+
 ## Git Workflow
 
 1. **Before Adding Files:**
