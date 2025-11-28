@@ -18,15 +18,15 @@ required_packages <- c(
   "xts",            # Extensible time series
   
   # Additional econometrics packages
-  "dynlm",          # Dynamic linear models
-  "lmtest",         # Testing linear regression models
+  # "dynlm",          # Dynamic linear models
+  # "lmtest",         # Testing linear regression models
   "sandwich",       # Robust covariance matrix estimators
-  "strucchange",    # Testing for structural change
-  "tsDyn",          # Nonlinear time series models
+  # "strucchange",    # Testing for structural change
+  # "tsDyn",          # Nonlinear time series models
   
   # GARCH models
-  "rugarch",        # Univariate GARCH models
-  "rmgarch",        # Multivariate GARCH models
+  # "rugarch",        # Univariate GARCH models
+  # "rmgarch",        # Multivariate GARCH models
   
   # Data manipulation and visualization
   "dplyr",          # Data manipulation
@@ -113,3 +113,4 @@ cat("1. Check the 'lectures/' folder for course slides\n")
 cat("2. Start with 'labs/lab01/' for your first practical session\n")
 cat("3. Refer to the README.md for course structure and information\n")
 cat("\nHappy learning!\n")
+
