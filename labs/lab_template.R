@@ -1,77 +1,77 @@
-# Lab XX: [Lab Title]
-# Multivariate Time Series Econometrics
-# Date: [Date]
+# Lab XX: [Título del Laboratorio]
+# Econometría de Series de Tiempo Multivariadas
+# Fecha: [Fecha]
 
 # ============================================================================
-# OBJECTIVES
+# OBJETIVOS
 # ============================================================================
-# 1. [Objective 1]
-# 2. [Objective 2]
-# 3. [Objective 3]
+# 1. [Objetivo 1]
+# 2. [Objetivo 2]
+# 3. [Objetivo 3]
 
 # ============================================================================
-# SETUP
+# CONFIGURACIÓN
 # ============================================================================
 
-# Clear workspace
+# Limpiar espacio de trabajo
 rm(list = ls())
 
-# Load required packages
-# If not installed, run setup.R first to install all required packages
+# Cargar paquetes requeridos
+# Si no están instalados, ejecute setup.R primero para instalar todos los paquetes requeridos
 library(vars)
 library(ggplot2)
 library(dplyr)
 
-# Recommended: Use relative paths or the 'here' package for portability
+# Recomendado: Use rutas relativas o el paquete 'here' para portabilidad
 # library(here)
 # data_path <- here("data", "raw", "dataset.csv")
 
 # ============================================================================
-# EXERCISE 1: [Title]
+# EJERCICIO 1: [Título]
 # ============================================================================
 
-# [Instructions for exercise 1]
+# [Instrucciones para el ejercicio 1]
 
-# Your code here:
-
-
-
-# ============================================================================
-# EXERCISE 2: [Title]
-# ============================================================================
-
-# [Instructions for exercise 2]
-
-# Your code here:
+# Su código aquí:
 
 
 
 # ============================================================================
-# EXERCISE 3: [Title]
+# EJERCICIO 2: [Título]
 # ============================================================================
 
-# [Instructions for exercise 3]
+# [Instrucciones para el ejercicio 2]
 
-# Your code here:
+# Su código aquí:
 
 
 
 # ============================================================================
-# QUESTIONS FOR DISCUSSION
+# EJERCICIO 3: [Título]
 # ============================================================================
 
-# 1. [Question 1]
+# [Instrucciones para el ejercicio 3]
+
+# Su código aquí:
+
+
+
+# ============================================================================
+# PREGUNTAS PARA DISCUSIÓN
+# ============================================================================
+
+# 1. [Pregunta 1]
 # 
-# Your answer:
+# Su respuesta:
 #
 
-# 2. [Question 2]
+# 2. [Pregunta 2]
 #
-# Your answer:
+# Su respuesta:
 #
 
 # ============================================================================
-# ADDITIONAL CHALLENGES (OPTIONAL)
+# DESAFÍOS ADICIONALES (OPCIONAL)
 # ============================================================================
 
-# [Optional advanced exercises]
+# [Ejercicios avanzados opcionales]
