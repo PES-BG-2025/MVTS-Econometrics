@@ -68,3 +68,45 @@ checkresiduals(modelo_auto)
 
 mean(ts_y)
 var(ts_y)
+
+# ------------------------------------------------------------------------------
+# 6. Simulación: Media y Varianza Condicional AR(1)
+# ------------------------------------------------------------------------------
+# Modelo: y_t = phi * y_{t-1} + epsilon_t
+
+phi <- 0.7
+sigma <- 1
+y <- rep(0, 1000)
+
+# Replicamos un proceso AR(1)
+set.seed(999)
+eps <- rnorm(1000, mean=0, sd=sigma)
+y[1] <- eps[1]
+for (t in 2:1000) {
+   y[t] = phi * y[t-1] + eps[t]
+}
+
+# Calcular momentos incondicionales empíricos
+media_empirica <- mean(y)
+var_empirica <- var(y)
+
+# Valores teóricos
+media_teorica <- 0                      # (E(epsilon_t)) / phi
+var_teorica <- sigma^2 / (1 - phi^2)    # Var(epsilon_t) / (1 - phi^2)
+
+# Propiedades del modelo AR(1)
+cat("Media Teórica:", media_teorica, "\n")
+cat("Media Empírica:", media_empirica, "\n")
+cat("Varianza Teórica:", var_teorica, "\n")
+cat("Varianza Empírica:", var_empirica, "\n")
+
+# Visualización de la distribución condicional
+hist(y, 
+    breaks = 30, 
+    col = "lightblue", 
+    border = "white",
+    main = paste("Distribución de y_t"),
+    xlab = "Posibles valores de y_t")
+
+abline(v = media_teorica, col = "red", lwd = 2, lty = 2)
+legend("topright", legend = c("Media incondicional"), col = c("red"), lty = 2)
