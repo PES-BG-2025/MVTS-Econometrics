@@ -18,6 +18,7 @@ var_data <- Canada[, c("e", "prod", "rw")] # Empleo, Productividad, Salarios Rea
 colnames(var_data) <- c("Empleo", "Prod", "Salarios")
 
 plot.ts(var_data, main = "Dinámica Multivariada")
+plot.ts(diff(var_data), main = "Dinámica Multivariada")
 
 # IMPORTANTE: En un VAR estándar, asumimos que las series son Estacionarias.
 # Si no lo son, se deberían diferenciar primero (o usar VEC, que veremos la otra semana).

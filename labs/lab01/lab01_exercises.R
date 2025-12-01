@@ -115,6 +115,7 @@ plot(mts_data, main = "Ejemplo de Serie de Tiempo Multivariada")
 # - lag() : Crear versiones rezagadas de una serie de tiempo
 # - diff() : Calcular diferencias
 # - window() : Extraer un subconjunto de una serie de tiempo
+# window(my_ts, start = c(2020, 1), end = c(2022, 12))
 # - decompose() : Descomposición estacional clásica
 
 # Ejemplo de diferenciación
