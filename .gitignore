@@ -3,6 +3,7 @@
 /lyxnotes/
 
 *.pptx
+*.html
 
 ## R
 
