@@ -150,3 +150,36 @@ plot(fevd_model)
 
 # Ver los valores numéricos
 print(fevd_model$e)
+
+# ------------------------------------------------------------------------------
+# Visualización de FEVD con ggplot2
+# ------------------------------------------------------------------------------
+
+# Función para graficar FEVD
+plot_fevd_ggplot <- function(fevd_obj, variable_name) {
+  # Extraer la matriz de descomposición para la variable deseada
+  fevd_data <- fevd_obj[[variable_name]]
+  
+  # Convertir a dataframe y añadir columna de periodo
+  df_fevd <- as.data.frame(fevd_data)
+  df_fevd$Period <- 1:nrow(df_fevd)
+  
+  # Convertir a formato largo (tidy)
+  df_long <- df_fevd %>%
+    pivot_longer(cols = -Period, names_to = "Shock", values_to = "Variance_Share")
+  
+  # Graficar
+  ggplot(df_long, aes(x = Period, y = Variance_Share, fill = Shock)) +
+    geom_area(alpha = 0.8, color = "white") +
+    scale_y_continuous(labels = scales::percent) +
+    labs(title = paste("Descomposición de Varianza para:", variable_name),
+         x = "Horizonte de Pronóstico",
+         y = "Porcentaje de Varianza Explicada") +
+    theme_minimal() +
+    scale_fill_brewer(palette = "Set2")
+}
+
+# Generar gráficos para cada variable
+plot_fevd_ggplot(fevd_model, "e")
+plot_fevd_ggplot(fevd_model, "prod")
+plot_fevd_ggplot(fevd_model, "rw")

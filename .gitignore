@@ -2,6 +2,7 @@
 
 /lyxnotes/
 
+*.docx
 *.pptx
 *.html
 
