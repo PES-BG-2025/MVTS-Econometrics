@@ -6,6 +6,8 @@
 *.pptx
 *.html
 
+/exams/
+
 ## R
 
 # History files

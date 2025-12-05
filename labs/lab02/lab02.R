@@ -110,6 +110,34 @@ irf_prod_emp <- irf(var_model,
 # Graficar
 plot(irf_prod_emp, main = "Respuesta del Empleo ante Shock en Productividad")
 
+# Función para graficar una sola IRF con ggplot2
+plot_single_irf_ggplot <- function(var_model, impulse_var, response_var, n.ahead = 10) {
+  # Calcular IRF internamente
+  irf_obj <- irf(var_model, impulse = impulse_var, response = response_var, 
+                 n.ahead = n.ahead, boot = TRUE)
+  
+  # Extraer datos
+  period <- 0:(nrow(irf_obj$irf[[impulse_var]]) - 1)
+  value <- irf_obj$irf[[impulse_var]][, response_var]
+  lower <- irf_obj$Lower[[impulse_var]][, response_var]
+  upper <- irf_obj$Upper[[impulse_var]][, response_var]
+  
+  df <- data.frame(Period = period, Value = value, Lower = lower, Upper = upper)
+  
+  ggplot(df, aes(x = Period, y = Value)) +
+    geom_line(color = "#2c3e50", linewidth = 1) +
+    geom_ribbon(aes(ymin = Lower, ymax = Upper), fill = "#3498db", alpha = 0.2) +
+    geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
+    labs(title = paste("Respuesta de", response_var, "ante shock en", impulse_var),
+         x = "Periodos", y = "Respuesta") +
+    scale_x_continuous(breaks = 0:n.ahead, minor_breaks = NULL) + # Grid en enteros
+    theme_minimal() +
+    theme(panel.grid.major = element_line(color = "gray80"),
+          panel.grid.minor = element_line(color = "gray90", linetype = "dotted"))
+}
+
+plot_single_irf_ggplot(var_model, "prod", "e")
+
 # TIP:
 # Si el intervalo (líneas punteadas) incluye el 0, 
 # el efecto NO es estadísticamente significativo en ese periodo.
