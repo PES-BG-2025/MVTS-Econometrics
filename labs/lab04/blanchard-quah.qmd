@@ -1,0 +1,14 @@
+---
+title: Identificación de con restricciones de largo plazo
+author: Rodrigo Chang
+format: revealjs
+editor: 
+    render-on-save: true
+---
+
+## El método tradicional 
+
+- La idea original de las restricciones de largo plazo proviene del trabajo de Blanchard y Quah (1989). 
+- En este trabajo, los autores atribuyen variaciones en el PIB real y el desempleo a un choque de oferta agregada $w_{t}^{AS}$ y a un choque de demanda agregada $w_{t}^{AD}$. 
+- La identificación de choques estructurales se obtiene al imponer restricciones para que el choque de demanda agregada no tenga efectos de largo plazo en el *nivel* del PIB real. 
+
