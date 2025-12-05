@@ -2,6 +2,11 @@
 
 This folder contains additional reading materials, papers, and reference documents.
 
+## Example Research papers
+
+Check [*Revisa Banca Central*](https://banguat.gob.gt/sites/default/files/banguat/Publica/Banca/BancaCentral89.pdf): 
+
+
 ## Organization
 
 Materials can be organized by:
@@ -21,8 +26,6 @@ Materials can be organized by:
 Key references for multivariate time series econometrics:
 1. Lütkepohl, H. (2005). *New Introduction to Multiple Time Series Analysis*
 2. Hamilton, J. D. (1994). *Time Series Analysis*
-3. Tsay, R. S. (2014). *Multivariate Time Series Analysis with R and Financial Applications*
-4. Shumway, R. H., & Stoffer, D. S. (2017). *Time Series Analysis and Its Applications*
 
 ## Online Resources
 
