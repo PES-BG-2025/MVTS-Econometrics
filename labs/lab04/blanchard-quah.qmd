@@ -6,9 +6,85 @@ editor:
     render-on-save: true
 ---
 
+# Introducción
 ## El método tradicional 
 
 - La idea original de las restricciones de largo plazo proviene del trabajo de Blanchard y Quah (1989). 
 - En este trabajo, los autores atribuyen variaciones en el PIB real y el desempleo a un choque de oferta agregada $w_{t}^{AS}$ y a un choque de demanda agregada $w_{t}^{AD}$. 
 - La identificación de choques estructurales se obtiene al imponer restricciones para que el choque de demanda agregada no tenga efectos de largo plazo en el *nivel* del PIB real. 
 
+## Blanchard y Quah (1989)
+Blanchard y Quah (1989) utilizan:
+
+$$z_{t}=\left(\begin{array}{c}
+\Delta gdp_{t}\\
+ur_{t}
+\end{array}\right)\sim I\left(0\right)$$
+
+$$ur_{t}\sim I\left(0\right),gdp_{t}\sim I\left(1\right)$$
+
+## VAR reducido
+
+- El VAR en forma reducida es: $$A\left(L\right)z_{t}=u_{t}$$ donde $A\left(L\right)=I_{2}-A_{1}L-\dots A_{p}L^{p}$. Notar que $A\left(1\right)=I_{2}-A_{1}-\dots-A_{p}$. 
+
+- Los errores de pronóstico son $u_{t}\sim\left(0,\Sigma_{u}\right)$.
+
+## VAR estructural
+
+- La forma estructural está dada por: $$B\left(L\right)z_{t}=w_{t},$$ donde $B\left(L\right)=B_{0}-B_{1}L-\dots B_{p}L^{p}$, y por lo tanto, $B\left(1\right)=B_{0}-B_{1}-\dots-B_{p}=B_{0}A\left(1\right)$.
+
+- Se impone la normalización $$w_{t}=\left(w_{t}^{AS},w_{t}^{AD}\right)^{\prime}\sim\left(0,I_{2}\right).$$
+
+Dado que $w_{t}=B_{0}u_{t}$, se tiene que $u_{t}=B_{0}^{-1}w_{t}$ y por lo tanto, $\Sigma_{u}=B_{0}^{-1}B_{0}^{-1\prime}$.
+
+## Efecto de choques estructurales
+
+El efecto de los choques estructurales se obtiene a través de la representación MA: $$z_{t}=B\left(L\right)^{-1}w_{t}=\Theta\left(L\right)w_{t}.$$
+
+Como $z_{t}$ es $I\left(0\right)$, el efecto de cualquier choque estructural sobre $z_{t}$ se aproxima a cero conforme el horizonte aumenta. 
+
+- En otras palabras, $\Delta gdp_{t}$ y $ur_{t}$, por construcción, retornarán a su estado estacionario eventualmente. 
+- Sin embargo, esto no significa que el nivel del PIB real regresará necesariamente a su valor inicial. El efecto sobre $gdp_{t}$ es la suma acumulada de los efectos sobre $\Delta gdp_{t}$.
+
+## Efectos acumulados
+
+Los efectos acumulados de largo plazo están dados por la matriz: $$\Theta\left(1\right)=\sum_{i=0}^{\infty}\Theta_{i}=B\left(1\right)^{-1}.$$
+
+Al requerir que $gdp_{t}$ regrese a su nivel inicial en el largo plazo en respuesta a un choque de demanda agregada impone una restricción de exclusión sobre la matriz $\Theta\left(1\right)$ tal que: 
+$$\Theta\left(1\right)=\left(\begin{array}{cc}
+\theta_{11}\left(1\right) & 0\\
+\theta_{21}\left(1\right) & \theta_{22}\left(1\right)
+\end{array}\right)$$
+
+En contraste, $\theta_{11}\left(1\right)$ permanece irrestricto, porque los choques de oferta agregada pueden afectar el nivel del PIB real en el largo plazo. Además, no hay restricciones en la segunda fila de $\Theta\left(1\right)$ porque las respuestas acumuladas de una variable estacionaria como $ur_{t}$ podrían ser diferentes de cero en general.
+
+Este ejemplo ilustra que si un choque está sujeto a una restricción de largo plazo y el otro no, es posible distinguir entre ellos.
+
+## Restricciones de largo plazo
+
+Usando la relación $$\Theta\left(1\right)=B\left(1\right)^{-1}=A\left(1\right)^{-1}B_{0}^{-1}$$ se observa que una restricción sobre $\Theta\left(1\right)$ es efectivamente una restricción implícita sobre $B_{0}$ porque los parámetros de la forma reducida $A\left(L\right)$ están dados por el DGP.
+
+- Las restricciones de largo plazo proveen una fuente de restricciones de identificación para modelos VAR estructurales.
+
+# Procedimiento
+
+Se describe el procedimento para identificar el modelo VAR(2) por Blanchard y Quah:
+
+## Estimación de la forma reducida
+
+Primero, estimar el modelo VAR en forma reducida y obtener $\Sigma_{u}$. 
+$$\begin{aligned}
+\Sigma_{u} & =B_{0}^{-1}B_{0}^{-1\prime}\\
+A\left(1\right)^{-1}\Sigma_{u}\left[A\left(1\right)^{-1}\right]^{\prime} & =A\left(1\right)^{-1}B_{0}^{-1}B_{0}^{-1\prime}\left[A\left(1\right)^{-1}\right]^{\prime}\\
+ & =\Theta\left(1\right)\Theta\left(1\right)^{\prime}
+\end{aligned}$$
+
+## Descomposición de Cholesky
+
+- Después, computamos $A\left(1\right)^{-1}\Sigma_{u}\left[A\left(1\right)^{-1}\right]^{\prime}$. 
+
+- Luego, como la estructura de $\Theta\left(1\right)$ es triangular, se puede aplicar una descomposición de Cholesky para obtener $\Theta\left(1\right)$.
+
+- Finalmente, se puede recuperar $B_{0}^{-1}=A\left(1\right)\Theta\left(1\right)$, con la que se puede proceder con el resto de objetos de análisis del VAR.
+
+- Este procedimiento lo realiza R automáticamente con la función `BQ`.
