@@ -5,6 +5,7 @@
 *.docx
 *.pptx
 *.html
+/**/*_files/
 
 /exams/
 
