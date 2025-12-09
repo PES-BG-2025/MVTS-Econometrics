@@ -22,7 +22,7 @@ required_packages <- c(
   # "lmtest",         # Testing linear regression models
   "sandwich",       # Robust covariance matrix estimators
   # "strucchange",    # Testing for structural change
-  # "tsDyn",          # Nonlinear time series models
+  "tsDyn",          # Nonlinear time series models
   
   # GARCH models
   # "rugarch",        # Univariate GARCH models
